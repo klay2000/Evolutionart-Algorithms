@@ -1,12 +1,14 @@
 public class Solution {
 
-    public enum initGenes{
+    public static enum initGenes{
         zeros,
         ones,
         random
     }
 
     private boolean[] genome;
+
+    private double fitness;
 
     public Solution(int genomeSize, initGenes init){
 
@@ -38,8 +40,13 @@ public class Solution {
         return genome;
     }
 
-    public void setGenome( boolean[] newGenome){
-        genome = newGenome;
+    public void setGenome( boolean[] genome){
+        this.genome = genome;
     }
+
+    public double getFitness() { return fitness; }
+
+    public void setFitness(double fitness) { this.fitness = fitness; }
+
 
 }
