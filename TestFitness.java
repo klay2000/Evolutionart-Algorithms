@@ -3,8 +3,8 @@ public class TestFitness extends EAFunction {
     @Override
     public Solution[] execute(Solution[] population) {
 
-        for(Solution i : population){
-            boolean [] genes = i.getGenome();
+        for(int i = 0; i < population.length; i++){
+            boolean [] genes = population[i].getGenome();
 
             int fitness = 0;
 
@@ -12,7 +12,7 @@ public class TestFitness extends EAFunction {
                 if(b)fitness++;
             }
 
-            i.setFitness(fitness);
+            population[i].setFitness(fitness);
         }
 
         return population;

@@ -20,7 +20,10 @@ public class EvolutionaryAlgorithm {
 
     }
 
-    void runEpoch(){ //runs an epoch
+    /*
+    *Runs an epoch.
+     */
+    void runEpoch(){
 
         fitness.execute(population);
         mutation.execute(population);
@@ -28,9 +31,17 @@ public class EvolutionaryAlgorithm {
 
     }
 
-    Solution [] getPopulation(){ return population;} //returns population
+    /*
+    *Gets population.
+     */
+    Solution [] getPopulation(){ return population;}
 
-    Solution getBestPopulationMember(){ //returns best solution in population
+    /*
+    *Returns best solution in population.
+     */
+    Solution getBestPopulationMember(){
+
+        fitness.execute(population);
 
         Solution best = population[0];
 
