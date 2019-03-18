@@ -18,18 +18,23 @@ public class Solution {
 
             case ones:
 
-                for(boolean i : genome)
-                    i = true;
+                for(int i = 0; i < genomeSize; i ++)
+                    genome[i] = true;
+
                 break;
 
             case zeros:
-                    for(boolean i : genome)
-                        i = false;
+
+                for(int i = 0; i < genomeSize; i ++)
+                        genome[i] = false;
+
                  break;
 
             case random:
-                    for(boolean i : genome)
-                        i = Math.round(Math.random()) == 1;
+
+                for(int i = 0; i < genomeSize; i ++)
+                        genome[i] = Math.round(Math.random()) == 1;
+
                 break;
 
         }

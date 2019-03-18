@@ -2,9 +2,9 @@ public class EvolutionaryAlgorithm {
 
     private Solution[] population;
 
-    private EAFunction fitness;
-    private EAFunction mutation;
-    private EAFunction crossover;
+    final private EAFunction fitness;
+    final private EAFunction mutation;
+    final private EAFunction crossover;
 
     public EvolutionaryAlgorithm(EAFunction fitness, EAFunction mutation, EAFunction crossover, int populationSize, int genomeSize, Solution.initGenes init){
 
@@ -14,8 +14,8 @@ public class EvolutionaryAlgorithm {
 
         population = new Solution[populationSize];
 
-        for(Solution i : population){
-            i = new Solution(genomeSize, init);
+        for(int i = 0; i < populationSize; i++){
+            population[i] = new Solution(genomeSize, init);
         }
 
     }
