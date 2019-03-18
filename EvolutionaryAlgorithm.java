@@ -20,7 +20,7 @@ public class EvolutionaryAlgorithm {
 
     }
 
-    void runEpoch(){
+    void runEpoch(){ //runs an epoch
 
         fitness.execute(population);
         mutation.execute(population);

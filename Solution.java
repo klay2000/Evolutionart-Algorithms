@@ -1,6 +1,6 @@
 public class Solution {
 
-    public static enum initGenes{
+    public enum initGenes{
         zeros,
         ones,
         random
@@ -38,15 +38,14 @@ public class Solution {
 
     public boolean[] getGenome(){
         return genome;
-    }
+    } //gets genome
 
     public void setGenome( boolean[] genome){
         this.genome = genome;
-    }
+    } //sets genome
 
-    public double getFitness() { return fitness; }
+    public double getFitness() { return fitness; } //gets fitness
 
-    public void setFitness(double fitness) { this.fitness = fitness; }
-
+    public void setFitness(double fitness) { this.fitness = fitness; } //sets fitness
 
 }
