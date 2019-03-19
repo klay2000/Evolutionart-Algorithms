@@ -1,24 +1,19 @@
 public class Main {
 
-    public static void main(String[] args){
+    public static void main(String[] args) throws IncompatibleFunctionsException {
 
         BitInversion inversion = new BitInversion();
-        inversion.setProbability(0.25);
+        inversion.setProbability(0.001);
 
-        EvolutionaryAlgorithm test = new EvolutionaryAlgorithm(new TestFitness(), inversion, new EAFunction(), 10, 10, Solution.initGenes.zeros);
+        EvolutionaryAlgorithm test = new EvolutionaryAlgorithm(new TestFitness(), new MostFitSelection(), inversion, new EAFunction(), 100, 100, Solution.initGenes.zeros);
 
-        for(boolean i : test.getBestPopulationMember().getGenome()){
-            System.out.print(i + " ");
+        for( int i = 10000; i> 0; i--) {
+            test.runEpoch();
+
+            System.out.println(test.getBestPopulationMember().getFitness());
+
+            if(test.getBestPopulationMember().getFitness() == 100) break;
         }
-        System.out.println(test.getBestPopulationMember().getFitness());
-
-        test.runEpoch();
-
-        for(boolean i : test.getBestPopulationMember().getGenome()){
-            System.out.print(i + " ");
-        }
-        System.out.println(test.getBestPopulationMember().getFitness());
-
     }
 
 }
