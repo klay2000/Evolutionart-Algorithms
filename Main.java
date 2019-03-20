@@ -2,10 +2,7 @@ public class Main {
 
     public static void main(String[] args) throws IncompatibleFunctionsException {
 
-        BitInversion inversion = new BitInversion();
-        inversion.setProbability(0.001);
-
-        EvolutionaryAlgorithm test = new EvolutionaryAlgorithm(new TestFitness(), new MostFitSelection(), inversion, new EAFunction(), 100, 100, Solution.initGenes.zeros);
+        EvolutionaryAlgorithm test = new EvolutionaryAlgorithm(new TestFitness(), new MostFitSelection(), new BitInversion(0.01), new EAFunction(), 100, 100, Solution.initGenes.zeros);
 
         for( int i = 10000; i> 0; i--) {
             test.runEpoch();

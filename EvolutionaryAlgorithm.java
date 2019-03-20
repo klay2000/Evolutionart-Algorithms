@@ -14,7 +14,7 @@ public class EvolutionaryAlgorithm {
         this.mutation = mutation;
         this.crossover = crossover;
 
-        if(!(selection.isWeighted==mutation.isWeighted && mutation.isWeighted==crossover.isWeighted)) throw new IncompatibleFunctionsException("");
+        if(!(selection.isWeighted==crossover.isWeighted)) throw new IncompatibleFunctionsException("");
 
         population = new Solution[populationSize];
 
@@ -31,8 +31,8 @@ public class EvolutionaryAlgorithm {
 
         fitness.execute(population);
         selection.execute(population);
-        mutation.execute(population);
         crossover.execute(population);
+        mutation.execute(population);
 
     }
 

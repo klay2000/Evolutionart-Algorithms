@@ -12,6 +12,12 @@ public class BitInversion extends EAFunction {
      */
     double getProbability(){ return probability; }
 
+    public BitInversion(double probability){
+
+        this.probability = probability;
+
+    }
+
     @Override
     public Solution[] execute(Solution[] population) {
 
