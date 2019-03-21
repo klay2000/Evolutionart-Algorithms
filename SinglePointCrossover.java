@@ -15,8 +15,9 @@ public class SinglePointCrossover extends EAFunction{
 
         Solution[] parents = new Solution[numberOfParents];
 
-        for(int i = 0; i < parents.length; i++) {
+        for(int i = 0; i < parents.length; i++) { // pick best population members as parents
             int bestIndex = 0;
+            parents[i] = population[0];
             for (int n = 0; n < population.length; n++) {
                 if(population[n].getSelectionWeight() > parents[i].getSelectionWeight()){
                     parents[i] = population[n];
@@ -26,26 +27,35 @@ public class SinglePointCrossover extends EAFunction{
             population[bestIndex].setSelectionWeight(0);
         }
 
-        Solution[] children = new Solution[(numberOfParents*numberOfParents)];
+        Solution[] children = new Solution[((numberOfParents*numberOfParents)-numberOfParents)/2]; // (x^2-x)/2
 
-        for(int i = 0; i < numberOfParents; i++){
-            for(int n = 0; n < numberOfParents; n++){
+        int childIndex = 0;
+
+        for(int i = 0; i < children.length; i++){
+            children[i] = new Solution(population[0].getGenome().length, Solution.initGenes.zeros);
+        }
+
+        for(int i = 0; i < numberOfParents; i++){ // run crossover on parents to generate children
+            for(int n = numberOfParents-i-1; n > 0; n--){
 
                 int crossSite = (int)Math.round(Math.random()*population[n].getGenome().length);
 
-                boolean[] newGenes = parents[n].getGenome();
+                boolean[] newGenes = parents[n].getGenome().clone();
 
                 for(int g = crossSite; g < parents[i].getGenome().length; g++){
                     newGenes[g] = parents[i].getGenome()[g];
                 }
 
-                children[i*n].setGenome(newGenes);
+                children[childIndex].setGenome(newGenes);
+                childIndex++;
 
             }
         }
 
-        for(int i = 0; i < population.length; i++){
-            population[i] = children[population.length%children.length];
+        for(int i = 0; i < population.length; i++){ // alternate children through final population
+
+            population[i] = children[i%children.length];
+
         }
 
         return population;
