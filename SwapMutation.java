@@ -1,6 +1,6 @@
-public class BitInversion extends EAFunction {
+public class SwapMutation extends EAFunction {
 
-    private double probability = 0;
+    private double probability;
 
     /*
     *Sets probability.
@@ -12,7 +12,7 @@ public class BitInversion extends EAFunction {
      */
     double getProbability(){ return probability; }
 
-    public BitInversion(double probability){
+    public SwapMutation(double probability){
 
         this.probability = probability;
 
@@ -26,7 +26,12 @@ public class BitInversion extends EAFunction {
             boolean[] genes = i.getGenome();
 
             for(int n = 0; n < genes.length; n++){
-                if(Math.random() <= probability) genes[n] = !genes[n];
+                if(Math.random() <= probability){
+                    boolean temp = genes[n];
+                    int swapLocation = (int)Math.floor(Math.random()*genes.length);
+                    genes[n] = genes[swapLocation];
+                    genes[swapLocation] = temp;
+                }
             }
         }
 
