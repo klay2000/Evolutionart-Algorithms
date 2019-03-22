@@ -1,3 +1,8 @@
+package fitness;
+
+import generic.EAFunction;
+import generic.Solution;
+
 public class TestFitness extends EAFunction {
 
     @Override

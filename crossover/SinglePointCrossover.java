@@ -1,10 +1,13 @@
-import com.sun.xml.internal.bind.v2.runtime.unmarshaller.XsiNilLoader;
+package crossover;
 
-public class SinglePointCrossover extends EAFunction{
+import generic.EAFunction;
+import generic.Solution;
+
+public class SinglePointCrossover extends EAFunction {
 
     final boolean isWeighted = true;
 
-    int numberOfParents;
+    private int numberOfParents;
 
     public SinglePointCrossover(int numberOfParents){
         this.numberOfParents = numberOfParents;

@@ -1,3 +1,8 @@
+package mutation;
+
+import generic.EAFunction;
+import generic.Solution;
+
 public class BitInversionMutation extends EAFunction {
 
     private double probability;

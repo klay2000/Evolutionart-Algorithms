@@ -1,3 +1,5 @@
+package generic;
+
 public class EAFunction {
 
     final boolean isWeighted = false;
@@ -5,7 +7,7 @@ public class EAFunction {
      *Executes function.
      * @Param population The population to run function on.
      */
-    public Solution[] execute( Solution[] population ){ //executes the function
+    public Solution[] execute(Solution[] population ){ //executes the function
         return population;
     }
 

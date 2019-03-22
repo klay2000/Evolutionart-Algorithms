@@ -1,12 +1,17 @@
+package selection;
+
+import generic.EAFunction;
+import generic.Solution;
+
 import java.util.Arrays;
 
-public class TournamentWeightedSelection extends EAFunction{
+public class TournamentSelection extends EAFunction {
 
     final boolean isWeighted = true;
 
     private int matches;
 
-    public TournamentWeightedSelection(int matches){
+    public TournamentSelection(int matches){
         this.matches = matches;
     }
 
@@ -36,7 +41,6 @@ public class TournamentWeightedSelection extends EAFunction{
 
         for(int i = 0; i < population.length; i++){
             population[i] = temp[i%temp.length];
-            population[i].setSelectionWeight(temp[i%temp.length].getFitness());
         }
 
         return population;

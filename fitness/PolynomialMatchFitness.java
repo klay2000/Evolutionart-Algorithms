@@ -1,3 +1,8 @@
+package fitness;
+
+import generic.EAFunction;
+import generic.Solution;
+
 public class PolynomialMatchFitness extends EAFunction {
 
     private int max;
@@ -22,8 +27,8 @@ public class PolynomialMatchFitness extends EAFunction {
         for(int i = 0; i < values.length; i++){
             double value = 1;
 
-            for (int n = 0; n < roots.length; n++){
-                value *= ((i*0.1)-roots[n]);
+            for (int root : roots) {
+                value *= ((i * 0.1) - root);
             }
 
 //            System.out.println(value);

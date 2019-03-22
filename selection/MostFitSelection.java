@@ -1,4 +1,9 @@
-public class MostFitSelection extends EAFunction{
+package selection;
+
+import generic.EAFunction;
+import generic.Solution;
+
+public class MostFitSelection extends EAFunction {
 
     @Override
     public Solution[] execute(Solution[] population) {

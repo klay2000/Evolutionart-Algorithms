@@ -1,4 +1,9 @@
-public class KPointCrossover extends EAFunction{
+package crossover;
+
+import generic.EAFunction;
+import generic.Solution;
+
+public class KPointCrossover extends EAFunction {
 
     final boolean isWeighted = true;
 

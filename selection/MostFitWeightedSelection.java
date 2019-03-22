@@ -1,4 +1,9 @@
-public class MostFitWeightedSelection extends EAFunction{
+package selection;
+
+import generic.EAFunction;
+import generic.Solution;
+
+public class MostFitWeightedSelection extends EAFunction {
 
     final Boolean isWeighted = true;
 

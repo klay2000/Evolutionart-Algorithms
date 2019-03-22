@@ -1,3 +1,7 @@
+package generic;
+
+import generic.EAFunction;
+
 public class EvolutionaryAlgorithm {
 
     private Solution[] population;
@@ -7,7 +11,7 @@ public class EvolutionaryAlgorithm {
     final private EAFunction mutation;
     final private EAFunction crossover;
 
-    public EvolutionaryAlgorithm(EAFunction fitness, EAFunction selection, EAFunction mutation, EAFunction crossover, int populationSize, int genomeSize, Solution.initGenes init)throws IncompatibleFunctionsException{
+    public EvolutionaryAlgorithm(EAFunction fitness, EAFunction selection, EAFunction mutation, EAFunction crossover, int populationSize, int genomeSize, Solution.initGenes init)throws IncompatibleFunctionsException {
 
         this.fitness = fitness;
         this.selection = selection;
@@ -27,7 +31,7 @@ public class EvolutionaryAlgorithm {
     /*
      *Runs an epoch.
      */
-    void runEpoch(){
+    public void runEpoch(){
 
         fitness.execute(population);
         selection.execute(population);
@@ -39,12 +43,12 @@ public class EvolutionaryAlgorithm {
     /*
      *Gets population.
      */
-    Solution [] getPopulation(){ return population;}
+    Solution[] getPopulation(){ return population;}
 
     /*
      *Returns best solution in population.
      */
-    Solution getBestPopulationMember(){
+    public Solution getBestPopulationMember(){
 
         fitness.execute(population);
 

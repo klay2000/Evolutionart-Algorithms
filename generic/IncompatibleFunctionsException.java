@@ -1,6 +1,8 @@
+package generic;
+
 public class IncompatibleFunctionsException extends Exception {
 
-    public IncompatibleFunctionsException(String message){
+    IncompatibleFunctionsException(String message){
         super(message);
     }
 
